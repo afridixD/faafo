@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://dchweo4loo3e4"]
+
+[ext_resource type="FontFile" uid="uid://dhc6360vc7kj2" path="res://font/upheaval/upheavtt.ttf" id="1_jygf3"]
+[ext_resource type="Script" path="res://scripts/main_screen.gd" id="1_lxfp8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5gte"]
+bg_color = Color(0.929412, 0.752941, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jsi1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2en4e"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj2s8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Main_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lxfp8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d5gte")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -124.0
+offset_right = 225.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.992157, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("1_jygf3")
+theme_override_font_sizes/font_size = 150
+text = "FAAFO"
+
+[node name="press" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_2jsi1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2en4e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pj2s8")
+
+[node name="Label" type="Label" parent="press"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -119.5
+offset_top = -239.0
+offset_right = 119.5
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_jygf3")
+theme_override_font_sizes/font_size = 25
+text = "CLICK TO CONTINUE"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="pressed" from="press" to="." method="_on_press_pressed"]

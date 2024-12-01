@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx5ktn7dxe1hl"]
+
+[ext_resource type="AudioStream" uid="uid://myeoyhk35w1" path="res://audio/8-bit-loop-189494.mp3" id="1_hjgvo"]
+
+[sub_resource type="GDScript" id="GDScript_s5sys"]
+script/source = "extends AudioStreamPlayer2D
+
+const level_music=preload(\"res://audio/8-bit-loop-189494.mp3\")
+
+func _play_music(music: AudioStream, volume=0.0):
+	if stream==music:
+		return
+	stream=music
+	volume_db=volume
+	play()
+	
+func play_music_level():
+	_play_music(level_music)
+	
+"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_hjgvo")
+script = SubResource("GDScript_s5sys")

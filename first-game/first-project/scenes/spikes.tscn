@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://871a734g7h1q"]
+
+[ext_resource type="Texture2D" uid="uid://k66b830mrirn" path="res://textures/Pixel Adventure 1/Free/Traps/Spikes/Idle.png" id="1_ikne1"]
+[ext_resource type="PackedScene" uid="uid://bql4sur7tknql" path="res://scenes/killzone.tscn" id="2_gbg4i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fomt"]
+size = Vector2(17, 6)
+
+[node name="Spikes" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ikne1")
+
+[node name="Killzone" parent="." instance=ExtResource("2_gbg4i")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-0.5, 5)
+shape = SubResource("RectangleShape2D_1fomt")
